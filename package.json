@@ -1,0 +1,32 @@
+{
+  "name": "react-native-touchable-safe",
+  "version": "0.1.0",
+  "author": "James Isaac <james.isaac@gmail.com>",
+  "description": "Consistent view hierarchy and API for React Native `Touchable*` components.",
+  "keywords": [
+    "react-native",
+    "touchable",
+    "android",
+    "ios"
+  ],
+  "bugs": {
+    "url": "https://github.com/jamesisaac/react-native-touchable-safe/issues"
+  },
+  "license": "MIT",
+  "main": "./js/Touchable",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamesisaac/react-native-touchable-safe.git"
+  },
+  "scripts": {
+    "flow": "flow || exit 0",
+    "prettier": "prettier --no-semi --single-quote --trailing-comma es5 --write \"js/**/*.js\""
+  },
+  "devDependencies": {
+    "flow-bin": "^0.50.0",
+    "prettier": "^1.5.3"
+  },
+  "peerDependencies": {
+    "react-native": "*"
+  }
+}
