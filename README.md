@@ -34,13 +34,14 @@ $ npm install --save react-native-touchable-safe
 
 ## Props
 
-The following props should be enough to control all aspects of any type of
-touchable feedback:
+If you don't want to use the defaults (`TouchableNativeFeedback` on Android
+and `TouchableOpacity` on iOS), you can specify another type:
 
-* **`ios?`**: `'opacity' | 'highlight' | 'without'` - (default: `'opacity'`) -
-  Which of RN's `Touchable*` components to use on iOS devices.
-* **`android?`**: `'native' | 'opacity' | 'highlight' | 'without'` - (default: `'native'`) -
-  Which of RN's `Touchable*` components to use on Android devices.
+* **`ios?`**: `'opacity' | 'highlight' | 'without'` - (default: `'opacity'`)
+* **`android?`**: `'native' | 'opacity' | 'highlight' | 'without'` - (default: `'native'`)
+
+Some very common behaviours used by all touchable types:
+
 * **`onPress?`**: `() => void`
 * **`outerStyle?`**: `Object | number` - Style to pass to the outer `View`
   component which wraps every type of touchable component.  Typically used to
@@ -48,9 +49,18 @@ touchable feedback:
 * **`outerProps?`**: `Object` - Similar to `outerStyle`, but lets you set any
   props (although `style` is the main use case).
 * **`disabled?`**: `boolean` - Remove any touch functionality and feedback.
+
+Seeing as setting a custom native ripple requires calling
+`TouchableNativeFeedback.Ripple`, the following top-level convenience props can
+be used to quickly customise the ripple:
+
 * **`nativeBorderless?`**: `boolean` - For `android="native"`, should the
   ripple effect be borderless.
 * **`nativePressColor?`**: `string` - (default: `'rgba(0, 0, 0, .1)'`) - For `android="native"`, what color should the ripple be.
+
+Any props which you only want passed to one type of touchable component can be
+controlled with the following props.
+
 * **`nativeProps?`**: `Object` - Any props to pass on to a
   `TouchableNativeFeedback` component.
 * **`opacityProps?`**: `Object` - Any props to pass on to a
@@ -59,6 +69,8 @@ touchable feedback:
   `TouchableHighlight` component.
 * **`withoutProps?`**: `Object` - Any props to pass on to a
   `TouchableWithoutFeedback` component.
+  
+And finally, anything else will be passed down to all touchable components.
   
 ## Examples
 
