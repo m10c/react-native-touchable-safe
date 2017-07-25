@@ -1,5 +1,9 @@
 # react-native-touchable-safe
 
+[![npm version](https://img.shields.io/npm/v/react-native-touchable-safe.svg)](https://www.npmjs.com/package/react-native-touchable-safe)
+[![license](https://img.shields.io/github/license/jamesisaac/react-native-touchable-safe.svg)](https://opensource.org/licenses/MIT)
+[![npm downloads](https://img.shields.io/npm/dm/react-native-touchable-safe.svg)](https://www.npmjs.com/package/react-native-touchable-safe)
+
 Consistent view hierarchy and API for React Native `Touchable*` components.
 
 As it stands, `TouchableOpacity` and `TouchableHighlight` wrap their children
