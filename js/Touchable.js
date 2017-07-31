@@ -10,11 +10,13 @@ import {
   View,
 } from 'react-native'
 
+type Style = Object | number
+
 type Props = {
   ios?: 'opacity' | 'highlight' | 'without',
   android?: 'native' | 'opacity' | 'highlight' | 'without',
   onPress?: () => void,
-  outerStyle?: Object | number,
+  outerStyle?: Style | Array<Style>,
   outerProps?: Object,
   disabled?: boolean,
   children?: any,
