@@ -6,17 +6,18 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import Touchable from '../Touchable'
 
-const Inner = () => (
+const Inner = () =>
   <View>
     <Text>Touchable</Text>
   </View>
-)
 
 it('renders correctly', () => {
-  const tree = renderer.create(
-    <Touchable>
-      <Inner />
-    </Touchable>
-  ).toJSON()
+  const tree = renderer
+    .create(
+      <Touchable>
+        <Inner />
+      </Touchable>
+    )
+    .toJSON()
   expect(tree).toMatchSnapshot()
 })
