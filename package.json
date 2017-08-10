@@ -20,11 +20,22 @@
   },
   "scripts": {
     "flow": "flow || exit 0",
-    "prettier": "prettier --no-semi --single-quote --trailing-comma es5 --write \"js/**/*.js\""
+    "jest": "jest",
+    "prettier": "prettier --no-semi --single-quote --trailing-comma es5 --write \"js/**/*.js\"",
+    "test": "npm run jest && npm run flow"
+  },
+  "jest": {
+    "preset": "react-native"
   },
   "devDependencies": {
-    "flow-bin": "^0.50.0",
-    "prettier": "^1.5.3"
+    "babel-jest": "^20.0.3",
+    "babel-preset-react-native": "^2.1.0",
+    "flow-bin": "^0.46.0",
+    "jest": "^20.0.4",
+    "prettier": "^1.5.3",
+    "react": "16.0.0-alpha.12",
+    "react-native": "^0.46.0",
+    "react-test-renderer": "16.0.0-alpha.12"
   },
   "peerDependencies": {
     "react-native": "*"
