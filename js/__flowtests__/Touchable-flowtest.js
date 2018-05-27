@@ -4,10 +4,11 @@ import React from 'react'
 import { Text, View } from 'react-native'
 import Touchable from '../Touchable'
 
-const Inner = () =>
+const Inner = () => (
   <View>
     <Text>Touchable</Text>
   </View>
+)
 
 const Correct = (
   <Touchable android="opacity">
@@ -20,14 +21,14 @@ const CorrectIOS = (
   </Touchable>
 )
 
-// $FlowExpectedError
 const BadType = (
+  // $FlowExpectedError
   <Touchable android="foo">
     <Inner />
   </Touchable>
 )
-// $FlowExpectedError
 const BadTypeIOS = (
+  // $FlowExpectedError
   <Touchable ios="foo">
     <Inner />
   </Touchable>

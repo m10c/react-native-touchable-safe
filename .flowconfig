@@ -2,15 +2,6 @@
 ; We fork some components by platform
 .*/*[.]android.js
 
-; Ignore templates for 'react-native init'
-.*/local-cli/templates/.*
-
-; Ignore the website subdir
-<PROJECT_ROOT>/website/.*
-
-; Ignore the Dangerfile
-<PROJECT_ROOT>/danger/dangerfile.js
-
 ; Ignore "BUCK" generated dirs
 <PROJECT_ROOT>/\.buckd/
 
@@ -21,51 +12,44 @@
 ; For RN Apps installed via npm, "Libraries" folder is inside
 ; "node_modules/react-native" but in the source repo it is in the root
 .*/Libraries/react-native/React.js
-.*/Libraries/react-native/ReactNative.js
 
-; My temp things that currently produce errors
-.*/node_modules/react-native/Libraries/Lists/*
-.*/node_modules/metro-bundler/build/node-haste/DependencyGraph/HasteMap.js
-.*/node_modules/metro-bundler/build/ModuleGraph/node-haste/node-haste.js
+; Ignore polyfills
+.*/Libraries/polyfills/.*
+
+; Ignore metro
+.*/node_modules/metro/.*
 
 [include]
 
 [libs]
-node_modules/react-native/Libraries/react-native/react-native-interface.js
-node_modules/react-native/flow
 flow-typed/
-flow/
+node_modules/react-native/Libraries/react-native/react-native-interface.js
+node_modules/react-native/flow/
+node_modules/react-native/flow-github/
 
 [options]
+emoji=true
+
 module.system=haste
-
-esproposal.class_static_fields=enable
-esproposal.class_instance_fields=enable
-esproposal.export_star_as=enable
-
-experimental.strict_type_args=true
 
 munge_underscores=true
 
 module.name_mapper='^[./a-zA-Z0-9$_-]+\.\(bmp\|gif\|jpg\|jpeg\|png\|psd\|svg\|webp\|m4v\|mov\|mp4\|mpeg\|mpg\|webm\|aac\|aiff\|caf\|m4a\|mp3\|wav\|html\|pdf\)$' -> 'RelativeImageStub'
 
-; My temp things that currently produce errors
-module.name_mapper='^FlatList$' -> 'emptyObject'
-module.name_mapper='^ListView$' -> 'emptyObject'
-module.name_mapper='^SectionList$' -> 'emptyObject'
-module.name_mapper='^ViewabilityHelper$' -> 'emptyObject'
-module.name_mapper='^VirtualizedList$' -> 'emptyObject'
+module.file_ext=.js
+module.file_ext=.jsx
+module.file_ext=.json
+module.file_ext=.native.js
 
 suppress_type=$FlowIssue
 suppress_type=$FlowFixMe
-suppress_type=$FixMe
+suppress_type=$FlowFixMeProps
+suppress_type=$FlowFixMeState
 
-suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe\\($\\|[^(]\\|(\\(>=0\\.\\(4[0-2]\\|[1-3][0-9]\\|[0-9]\\).[0-9]\\)? *\\(site=[a-z,_]*react_native_oss[a-z,_]*\\)?)\\)
-suppress_comment=\\(.\\|\n\\)*\\$FlowIssue\\((\\(>=0\\.\\(4[0-2]\\|[1-3][0-9]\\|[0-9]\\).[0-9]\\)? *\\(site=[a-z,_]*react_native_oss[a-z,_]*\\)?)\\)?:? #[0-9]+
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe\\($\\|[^(]\\|(\\(<VERSION>\\)? *\\(site=[a-z,_]*react_native[a-z,_]*\\)?)\\)
+suppress_comment=\\(.\\|\n\\)*\\$FlowIssue\\((\\(<VERSION>\\)? *\\(site=[a-z,_]*react_native[a-z,_]*\\)?)\\)?:? #[0-9]+
 suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
 
-unsafe.enable_getters_and_setters=true
-
 [version]
-^0.46.0
+^0.67.0

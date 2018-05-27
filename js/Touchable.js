@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react'
+import * as React from 'react'
 import {
   Platform,
   TouchableHighlight,
@@ -10,14 +10,15 @@ import {
   View,
 } from 'react-native'
 
-type Props = {
+type Props = $ReadOnly<{
+  all?: 'opacity' | 'highlight' | 'without',
   ios?: 'opacity' | 'highlight' | 'without',
   android?: 'native' | 'opacity' | 'highlight' | 'without',
-  onPress?: () => void,
+  onPress?: () => void | Promise<void>,
   outerStyle?: mixed,
-  outerProps?: Object,
+  outerProps?: {},
   disabled?: boolean,
-  children?: any,
+  children: React.Element<any>,
 
   // Specific options for the ripple TouchableNativeFeedback, available as
   // props as a convenience so the caller doesn't need to call
@@ -26,15 +27,16 @@ type Props = {
   nativePressColor?: string,
 
   // Props to pass on to a specific view type
-  nativeProps?: Object,
-  opacityProps?: Object,
-  highlightProps?: Object,
-  withoutProps?: Object,
-}
+  nativeProps?: {},
+  opacityProps?: {},
+  highlightProps?: {},
+  withoutProps?: {},
+}>
 
 export default ({
-  ios = 'opacity',
-  android = 'native',
+  ios,
+  android,
+  all,
   onPress = () => {},
   outerStyle,
   outerProps = {},
@@ -51,7 +53,13 @@ export default ({
 
   ...rest
 }: Props) => {
-  const type = Platform.OS === 'ios' ? ios : android
+  // "ios" and "android" values take priority over "all"
+  let type = (Platform.OS === 'android' ? android : ios) || all
+
+  // If no value was provided, fall back to platform defaults
+  if (!type) {
+    type = Platform.OS === 'android' ? 'native' : 'opacity'
+  }
 
   // Merge outerProps into outerStyle
   outerProps = {
