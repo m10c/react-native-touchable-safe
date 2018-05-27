@@ -21,6 +21,14 @@ const CorrectIOS = (
   </Touchable>
 )
 
+const TwoChildren = (
+  // $FlowExpectedError
+  <Touchable ios="opacity">
+    <Inner />
+    <Inner />
+  </Touchable>
+)
+
 const BadType = (
   // $FlowExpectedError
   <Touchable android="foo">
@@ -29,7 +37,7 @@ const BadType = (
 )
 const BadTypeIOS = (
   // $FlowExpectedError
-  <Touchable ios="foo">
+  <Touchable ios="native">
     <Inner />
   </Touchable>
 )
