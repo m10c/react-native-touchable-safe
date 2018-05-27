@@ -2,13 +2,9 @@
   "name": "react-native-touchable-safe",
   "version": "1.0.2",
   "author": "James Isaac <james.isaac@gmail.com>",
-  "description": "Consistent view hierarchy and API for React Native `Touchable*` components.",
-  "keywords": [
-    "react-native",
-    "touchable",
-    "android",
-    "ios"
-  ],
+  "description":
+    "Consistent view hierarchy and API for React Native `Touchable*` components.",
+  "keywords": ["react-native", "touchable", "android", "ios"],
   "bugs": {
     "url": "https://github.com/jamesisaac/react-native-touchable-safe/issues"
   },
@@ -21,7 +17,7 @@
   "scripts": {
     "flow": "flow || exit 0",
     "jest": "jest",
-    "prettier": "prettier --no-semi --single-quote --trailing-comma es5 --write \"js/**/*.js\"",
+    "prettier": "prettier --write \"js/**/*.js\"",
     "test": "npm run jest && npm run flow"
   },
   "jest": {
@@ -30,12 +26,12 @@
   "devDependencies": {
     "babel-jest": "^20.0.3",
     "babel-preset-react-native": "^2.1.0",
-    "flow-bin": "^0.46.0",
+    "flow-bin": "^0.67.0",
     "jest": "^20.0.4",
-    "prettier": "^1.5.3",
-    "react": "16.0.0-alpha.12",
-    "react-native": "^0.46.0",
-    "react-test-renderer": "16.0.0-alpha.12"
+    "prettier": "~1.12.0",
+    "react": "16.3.1",
+    "react-native": "^0.55.3",
+    "react-test-renderer": "16.3.1"
   },
   "peerDependencies": {
     "react-native": "*"
