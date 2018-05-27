@@ -94,15 +94,11 @@ NativeFeedback on Android, Opacity on iOS
 ```js
 import React from 'react'
 import Touchable from 'react-native-touchable-safe'
-import MyLabel from './MyLabel'
+import MyButton from './MyButton'
 
 export default () => (
-  <Touchable
-    onPress={() => {
-      console.log('Pressed')
-    }}
-  >
-    <MyLabel />
+  <Touchable onPress={() => console.log('Pressed')}>
+    <MyButton />
   </Touchable>
 )
 ```
