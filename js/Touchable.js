@@ -15,7 +15,7 @@ type Props = $ReadOnly<{
   ios?: 'opacity' | 'highlight' | 'without',
   android?: 'native' | 'opacity' | 'highlight' | 'without',
   onPress?: () => mixed,
-  outerStyle?: mixed,
+  outerStyle?: any,
   outerProps?: {},
   disabled?: boolean,
   children: React.Element<any>,
