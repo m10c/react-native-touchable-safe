@@ -1,6 +1,6 @@
 {
   "name": "react-native-touchable-safe",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "James Isaac <james.isaac@gmail.com>",
   "description": "Consistent view hierarchy and API for React Native `Touchable*` components.",
   "keywords": [
