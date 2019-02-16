@@ -14,7 +14,7 @@ type Props = $ReadOnly<{
   all?: 'opacity' | 'highlight' | 'without',
   ios?: 'opacity' | 'highlight' | 'without',
   android?: 'native' | 'opacity' | 'highlight' | 'without',
-  onPress?: () => void | Promise<void>,
+  onPress?: () => mixed,
   outerStyle?: mixed,
   outerProps?: {},
   disabled?: boolean,
