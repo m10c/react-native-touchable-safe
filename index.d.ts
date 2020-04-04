@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { ViewProps, ViewStyle } from 'react-native';
+import { StyleProp, ViewProps, ViewStyle } from 'react-native';
 
 type TouchableProps = {
   all?: 'opacity' | 'highlight' | 'without';
   ios?: 'opacity' | 'highlight' | 'without';
   android?: 'native' | 'opacity' | 'highlight' | 'without';
   onPress?: () => void;
-  outerStyle?: ViewStyle;
+  outerStyle?: StyleProp<ViewStyle>;
   outerProps?: ViewProps;
   disabled?: boolean;
 

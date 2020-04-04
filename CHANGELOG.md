@@ -1,3 +1,7 @@
+## 1.1.4
+
+- Fix type of `outerStyle` in TypeScript typedef
+
 ## 1.1.3
 
 - Add TypeScript type declarations in `index.d.ts`
