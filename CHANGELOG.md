@@ -1,3 +1,9 @@
+## 1.1.5
+
+- Instead of replacing the `Touchable` with a `View` when disabled,
+  continue rendering the `Touchable` and pass the `disabled` prop down
+  (fixes issue with animations being truncated).
+
 ## 1.1.4
 
 - Fix type of `outerStyle` in TypeScript typedef

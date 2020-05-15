@@ -40,7 +40,6 @@ export default ({
   onPress = () => {},
   outerStyle,
   outerProps = {},
-  disabled = false,
   children,
 
   nativeBorderless = false,
@@ -67,9 +66,7 @@ export default ({
     ...(outerStyle ? { style: outerStyle } : {}),
   }
 
-  if (disabled) {
-    return <View {...outerProps} children={children} />
-  } else if (type === 'opacity') {
+  if (type === 'opacity') {
     return (
       <TouchableOpacity
         {...outerProps}
