@@ -82,7 +82,7 @@ export default ({
     )
   } else if (type === 'native') {
     // Only on Android Lollipop and above
-    if (Platform.Version >= 21) {
+    if (parseInt(Platform.Version, 10) >= 21) {
       return (
         <View {...outerProps}>
           <TouchableNativeFeedback
