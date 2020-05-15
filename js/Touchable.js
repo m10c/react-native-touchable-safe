@@ -11,6 +11,9 @@ import {
 } from 'react-native'
 
 type Props = $ReadOnly<{
+  // All touchable types inherit the TouchableWithoutFeedback props
+  ...React.ElementProps<typeof TouchableWithoutFeedback>,
+
   all?: 'opacity' | 'highlight' | 'without',
   ios?: 'opacity' | 'highlight' | 'without',
   android?: 'native' | 'opacity' | 'highlight' | 'without',

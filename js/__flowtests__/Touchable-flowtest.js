@@ -41,3 +41,15 @@ const BadTypeIOS = (
     <Inner />
   </Touchable>
 )
+
+const ValidExtraProp = (
+  <Touchable onLongPress={() => {}}>
+    <Inner />
+  </Touchable>
+)
+const InvalidExtraProp = (
+  // $FlowExpectedError
+  <Touchable onFooBar={() => {}}>
+    <Inner />
+  </Touchable>
+)

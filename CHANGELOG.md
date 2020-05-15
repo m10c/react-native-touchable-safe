@@ -1,5 +1,6 @@
 ## 1.1.5
 
+- Add all `TouchableWithoutFeedback` props to the Flow & TypeScript typedefs.
 - Instead of replacing the `Touchable` with a `View` when disabled,
   continue rendering the `Touchable` and pass the `disabled` prop down
   (fixes issue with animations being truncated).

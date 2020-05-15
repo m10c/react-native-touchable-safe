@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { StyleProp, ViewProps, ViewStyle } from 'react-native';
+import { StyleProp, ViewProps, ViewStyle, TouchableWithoutFeedback } from 'react-native';
 
-type TouchableProps = {
+type TouchableProps = React.ComponentProps<typeof TouchableWithoutFeedback> & {
   all?: 'opacity' | 'highlight' | 'without';
   ios?: 'opacity' | 'highlight' | 'without';
   android?: 'native' | 'opacity' | 'highlight' | 'without';
